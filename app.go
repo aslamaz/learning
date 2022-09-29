@@ -3,8 +3,14 @@ package main
 import "fmt"
 
 func main() {
+	var sum int
+	var a [5]int = [5]int{1, 2, 3, 4, 6}
+	for i := 0; i < len(a); i++ {
+		sum = sum + a[i]
+	}
+	avg := float64(sum) / float64(len(a))
+	fmt.Println(avg)
 
-	primeNumber(50)
 }
 func countDigits(num int) int {
 	var count int
@@ -124,4 +130,25 @@ func primeNumber(number int) {
 		}
 
 	}
+}
+func fibonacci(number int) {
+	a := 0
+	b := 1
+	var c int
+	for i := 0; i < number; i++ {
+		c = a + b
+		fmt.Println(a)
+		a = b
+		b = c
+	}
+}
+func fib(number int) int {
+	if number == 0 {
+		return 0
+	} else if number == 1 {
+		return 1
+	} else {
+		return fib(number-1) + fib(number-2)
+	}
+
 }
