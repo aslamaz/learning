@@ -3,8 +3,69 @@ package main
 import "fmt"
 
 func main() {
+	fmt.Println(fact(4))
+}
+func fact(num int) int {
+	if num == 0 || num == 1 {
+		return 1
+	} else {
+		return num * fact(num-1)
+	}
+}
 
-	fmt.Println(grade2(69))
+func factorial(n int) int {
+	var result int = 1
+	for i := 1; i <= n; i++ {
+		result = result * i
+	}
+	return result
+}
+func productOfArray() {
+	var num1 int
+	var product int = 1
+	var number1 [100]int
+	fmt.Println("enter the values")
+	fmt.Scanf("%d", &num1)
+	fmt.Printf("enter %d values", num1)
+	for i := 0; i < num1; i++ {
+		fmt.Scanf("%d", &number1[i])
+	}
+	for i := 0; i < num1; i++ {
+		product = product * number1[i]
+	}
+	fmt.Println(product)
+}
+func sumOfArray() {
+	var n int
+	var numbers [100]int
+	var sum int
+	fmt.Println("enter the values")
+	fmt.Scanf("%d", &n)
+	fmt.Printf("enter %d numbers", n)
+	for i := 0; i < n; i++ {
+		fmt.Scanf("%d", &numbers[i])
+	}
+	for i := 0; i < n; i++ {
+		sum = sum + numbers[i]
+	}
+	fmt.Println(sum)
+}
+
+func array() {
+	// WAP to get n values from user and print it
+	var n int
+	fmt.Println("enter the values of n")
+	var numbers [100]int
+	fmt.Scanf("%d", &n)
+	fmt.Printf("enter %d numbers", n)
+	for i := 0; i < n; i++ {
+		fmt.Scanf("%d", &numbers[i])
+	}
+
+	for i := 0; i < n; i++ {
+		fmt.Println(numbers[i])
+	}
+
 }
 func countDigits(num int) int {
 	var count int

@@ -185,3 +185,10 @@ func Test_grade2Fail(t *testing.T) {
 		t.Errorf("expected: %v got: %v", expected, got)
 	}
 }
+func Test_factorial(t *testing.T) {
+	got := factorial(5)
+	expected := 120
+	if got != expected {
+		t.Errorf("expected: %v got: %v", expected, got)
+	}
+}
