@@ -3,14 +3,8 @@ package main
 import "fmt"
 
 func main() {
-	var sum int
-	var a [5]int = [5]int{1, 2, 3, 4, 6}
-	for i := 0; i < len(a); i++ {
-		sum = sum + a[i]
-	}
-	avg := float64(sum) / float64(len(a))
-	fmt.Println(avg)
 
+	fmt.Println(grade2(69))
 }
 func countDigits(num int) int {
 	var count int
@@ -151,4 +145,65 @@ func fib(number int) int {
 		return fib(number-1) + fib(number-2)
 	}
 
+}
+func luckyDraw(num int) bool {
+	var d int
+	var lastTwoDigits int
+	var sum int
+	lastTwoDigits = num % 100
+	for lastTwoDigits > 0 {
+		d = lastTwoDigits % 10
+		lastTwoDigits = lastTwoDigits / 10
+		sum = sum + d
+	}
+	if sum == 3 || sum == 8 {
+		return true
+	} else {
+		return false
+	}
+}
+func isLuckyDraw(num int) bool {
+	var digit int
+	var sum int
+	for i := 0; i < 2; i++ {
+		digit = num % 10
+		num = num / 10
+		sum = sum + digit
+	}
+	if sum == 3 || sum == 8 {
+		return true
+	} else {
+		return false
+	}
+}
+func grade(num int) string {
+	if num >= 90 {
+		return ("A")
+	} else if num >= 80 {
+		return ("B")
+	} else if num >= 70 {
+		return ("c")
+	} else if num >= 60 {
+		return ("D")
+	} else if num >= 50 {
+		return ("E")
+	} else {
+		return ("fail")
+	}
+}
+func grade2(num int) string {
+	switch {
+	case num >= 90:
+		return "A"
+	case num >= 80:
+		return "B"
+	case num >= 70:
+		return "c"
+	case num >= 60:
+		return "D"
+	case num >= 50:
+		return "E"
+	default:
+		return "fail"
+	}
 }
