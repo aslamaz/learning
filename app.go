@@ -2,24 +2,27 @@ package main
 
 import "fmt"
 
+func main() {
+	bubbleSort()
+}
 func bubbleSort() {
-	var array1 [10]int
 	var num int
 	fmt.Println("enter a integer number")
 	fmt.Scanf("%d", &num)
+	array := make([]int, num)
 	fmt.Printf("enter %d values", num)
 	for i := 0; i < num; i++ {
-		fmt.Scanf("%d", &array1[i])
+		fmt.Scanf("%d", &array[i])
 	}
-	fmt.Println(array1)
+	fmt.Println(array)
 	for i := 0; i < num-1; i++ {
 		for j := 0; j < num-i-1; j++ {
-			if array1[j] < array1[j+1] {
-				array1[j], array1[j+1] = array1[j+1], array1[j]
+			if array[j] < array[j+1] {
+				array[j], array[j+1] = array[j+1], array[j]
 			}
 		}
 	}
-	fmt.Println(array1)
+	fmt.Println(array)
 }
 func fact(num int) int {
 	if num == 0 || num == 1 {
