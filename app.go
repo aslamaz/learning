@@ -3,7 +3,18 @@ package main
 import "fmt"
 
 func main() {
-	bubbleSort()
+
+}
+func countNumberOfOccurence() {
+	var array = []int{1, 2, 3, 1, 2, 6, 8, 1}
+	m := make(map[int]int)
+	for _, v := range array {
+		m[v]++
+	}
+	for num, count := range m {
+		fmt.Printf("%d is found %d times\n", num, count)
+	}
+
 }
 func bubbleSort() {
 	var num int
